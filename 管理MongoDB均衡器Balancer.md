@@ -20,7 +20,6 @@ db.settings.update(
 <stop-time>：结束时间，时间格式为HH:MM（北京时间），HH取值范围为00 - 23，MM取值范围为00 - 59。
 
 可以通过执行sh.status()命令查看Balancer的活动窗口。如下示例中，活动窗口被设置为01:00- 03:00。
-![image](151DDC3941A24E5D84D7AA54A4CD152F)
 相关操作：如您需要Balancer始终处于运行状态，可以使用如下命令去除活动窗口的设置。
 ```
 db.settings.update({ _id : "balancer" }, { $unset : { activeWindow : true } })
@@ -50,7 +49,6 @@ while( sh.isBalancerRunning() ) {
 ```
 返回值为空，表示Balancer没有处于执行任务的状态，此时可执行下一步的操作，关闭Balancer 。  
 返回值为waiting，表示Balancer正在执行块迁移，此时不能执行关闭Balancer的命令，否则可能引起数据不一致。
-![image](07D3DB032F8841A5BC76FDAB0932772A)
 ##### 确认执行第3步的命令后返回的值为空，可执行关闭Balancer命令
 ```
 sh.stopBalancer()
