@@ -308,7 +308,7 @@ db.tablename.xx 可用tab键寻找
 
 switched to db admin
 
-> db.createUser({ user:"root", pwd:"Qn@9965321", roles:[{role:"root",db:"admin"}] })
+> db.createUser({ user:"root", pwd:"965321", roles:[{role:"root",db:"admin"}] })
 
 Successfully added user: {
 
@@ -328,7 +328,7 @@ Successfully added user: {
 
 }
 
-> db.auth('root','Qn@9965321')
+> db.auth('root','965321')
 
 1
 ```
